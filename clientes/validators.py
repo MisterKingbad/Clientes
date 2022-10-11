@@ -5,7 +5,8 @@ from validate_docbr import CPF
  
 def cpf_valido(numero_do_cpf):
     cpf = CPF()
-    cpf.validate(numero_do_cpf)
+    mask_cpf = cpf.generate(numero_do_cpf)
+    return cpf.validate(mask_cpf)
         
 def nome_valido(nome):
     return nome.isalpha() #se o nome não for alfabético
